@@ -119,6 +119,8 @@ public class DnD {
                 bindCommands(rootCommand, applicationContext.getBean(NpcCommand.class));
             case "LOOT":
                 bindCommands(rootCommand, applicationContext.getBean(LootCommand.class));
+            case "COMBAT":
+                bindCommands(rootCommand, applicationContext.getBean(CombatCommand.class));
             default:
                 break;
         }

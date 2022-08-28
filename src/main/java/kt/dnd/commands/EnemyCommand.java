@@ -1,13 +1,15 @@
 package kt.dnd.commands;
 
+import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
 
 @Component
+@Scope("prototype")
 public class EnemyCommand extends Command {
 
     @Override
     public void execute() {
-        System.out.println(">> ENEMY command NYI");
+        System.out.println(">> ENEMY command NYI");// TODO: ENEMY(stats) delegates creature creation
         showHelp();
     }
 
