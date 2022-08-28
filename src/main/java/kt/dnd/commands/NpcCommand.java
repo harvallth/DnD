@@ -24,7 +24,8 @@ public class NpcCommand extends Command {
         else switch (rootCommand.getParams().get(0)) {
             case "SHOW":
             case "LIST":
-                npcBasket.list();
+                System.out.println(">> List all generated NPCs:");
+                npcBasket.list().forEach(System.out::println);
                 break;
             case "CREATE":
             case "ADD":
@@ -48,7 +49,7 @@ public class NpcCommand extends Command {
         if (params.size() > 1)
             name = params.get(1);
         else
-            name = Npc.getRandomName();
+            name = npcBasket.getRandomName();
 
         System.out.print(">> ");
         npcBasket.add(new Npc(name, true));

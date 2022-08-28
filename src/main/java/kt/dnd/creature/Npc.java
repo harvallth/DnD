@@ -60,21 +60,9 @@ public class Npc extends Creature {
         return aspects;
     }
 
-    public static String getRandomName() {
-        String newName = "";
-//        long count;
-//        do {
-            newName = MaleFirstName.getRandom().toString() + "_" + LastName.getRandom().toString();
-//            String tempName = newName;
-//            count = npcBasket.list().stream().filter(x -> x.name.equals(tempName)).collect(Collectors.counting());
-//        } while (count > 0);
-
-        return newName;
-    }
-
     @Override
     public String toString() {
-        return this.name + "("+(sex ? "M" : "F")+") - " +
+        return this.name + " ("+(sex ? "M" : "F")+") - " +
                 "Charakter: " + nature + ". Zachowanie: " + behavior + ". Wyglad: " + appearance;
     }
 }

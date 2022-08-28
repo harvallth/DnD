@@ -5,14 +5,13 @@ import org.springframework.stereotype.Component;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
+import java.util.stream.Collectors;
 
 @Component
 public class NpcBasket {
     private List<Npc> npcList = new ArrayList();
 
     public List<Npc> list() {
-        System.out.println(">> List all generated NPCs:");
-        npcList.forEach(System.out::println);
         return npcList;
     }
 
@@ -33,5 +32,17 @@ public class NpcBasket {
             return npcToBeRemoved.get();
         else
             throw new IllegalArgumentException("No NPC with given name!");
+    }
+
+    public String getRandomName() {
+        String newName = "";
+        long count;
+        do {
+            newName = MaleFirstName.getRandom().toString() + "_" + LastName.getRandom().toString();
+            String tempName = newName;
+            count = list().stream().filter(x -> x.name.equals(tempName)).collect(Collectors.counting());
+        } while (count > 0);
+
+        return newName;
     }
 }
