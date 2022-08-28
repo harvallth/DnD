@@ -1,5 +1,7 @@
 package kt.dnd.commands;
 
+import org.springframework.stereotype.Component;
+
 import java.util.List;
 
 public class RootCommand extends Command {

@@ -3,10 +3,12 @@ package kt.dnd;
 import kt.dnd.character.*;
 import kt.dnd.character.Character;
 import kt.dnd.commands.*;
-import kt.dnd.creature.Npc;
 import kt.dnd.items.Gold;
 import kt.dnd.items.armory.*;
 import kt.dnd.magic.Spell;
+import org.springframework.context.annotation.AnnotationConfigApplicationContext;
+import org.springframework.context.annotation.ComponentScan;
+import org.springframework.context.annotation.Configuration;
 
 import java.io.BufferedReader;
 import java.io.IOException;
@@ -17,9 +19,11 @@ import java.util.Arrays;
 import java.util.List;
 import java.util.Locale;
 
-import static kt.dnd.commands.RootCommand.*;
-
+@Configuration
+@ComponentScan
 public class DnD {
+    private static AnnotationConfigApplicationContext applicationContext = new AnnotationConfigApplicationContext("kt.dnd");
+
     private static Character harv;
     private static Character nyria;
     private static Character yuuko;
@@ -108,13 +112,13 @@ public class DnD {
 
         switch (rootCommand.getValue()) {
             case "PLAYER":
-                bindCommands(rootCommand, new PlayerCommand());
+                bindCommands(rootCommand, applicationContext.getBean(PlayerCommand.class));
             case "ENEMY":
-                bindCommands(rootCommand, new EnemyCommand());
+                bindCommands(rootCommand, applicationContext.getBean(EnemyCommand.class));
             case "NPC":
-                bindCommands(rootCommand, new NpcCommand());
+                bindCommands(rootCommand, applicationContext.getBean(NpcCommand.class));
             case "LOOT":
-                bindCommands(rootCommand, new LootCommand());
+                bindCommands(rootCommand, applicationContext.getBean(LootCommand.class));
             default:
                 break;
         }

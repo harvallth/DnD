@@ -2,13 +2,16 @@ package kt.dnd.commands;
 
 import kt.dnd.creature.Npc;
 import kt.dnd.creature.NpcBasket;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Component;
 
 import java.util.List;
 
+@Component
 public class NpcCommand extends Command {
 
-//    @Inject TODO
-    private NpcBasket npcBasket = new NpcBasket();
+    @Autowired
+    private NpcBasket npcBasket;
 
     @Override
     public void execute() {

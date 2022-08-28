@@ -2,9 +2,11 @@ package kt.dnd.commands;
 
 import kt.dnd.actions.Looting;
 import kt.dnd.items.Item;
+import org.springframework.stereotype.Component;
 
 import java.util.List;
 
+@Component
 public class LootCommand extends Command {
 
     @Override
