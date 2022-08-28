@@ -1,4 +1,4 @@
-package kt.dnd.creature;
+package test.java.dnd.creature;
 
 import kt.dnd.creature.Nature;
 import org.junit.jupiter.api.Test;

@@ -1,5 +1,6 @@
-package kt.dnd;
+package test.java.dnd;
 
+import kt.dnd.DnD;
 import kt.dnd.character.Character;
 import kt.dnd.character.Trait;
 import kt.dnd.character.Stat;
