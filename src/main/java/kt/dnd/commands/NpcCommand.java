@@ -3,11 +3,13 @@ package kt.dnd.commands;
 import kt.dnd.creature.Npc;
 import kt.dnd.creature.NpcBasket;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
 
 import java.util.List;
 
 @Component
+@Scope("prototype")
 public class NpcCommand extends Command {
 
     @Autowired

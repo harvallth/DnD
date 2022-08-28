@@ -1,15 +1,17 @@
 package kt.dnd.creature;
 
+import org.springframework.beans.factory.annotation.Autowired;
+
 import java.util.Arrays;
 import java.util.List;
 import java.util.Random;
 
 public class Npc extends Creature {
 
-    //TODO: Inject
+    @Autowired
     private static NpcBasket npcBasket;
 
-    private boolean sex; // TRUE for male
+    private Boolean sex; // TRUE for male
     private Nature nature;
     private Behavior behavior;
     private String appearance;
@@ -20,7 +22,7 @@ public class Npc extends Creature {
         this.nature = Nature.getRandom();
         this.behavior = Behavior.getRandom();
         this.appearance = generateAppearance();
-        System.out.println(this.name + " - Charakter: " + nature + ". Zachowanie: " + behavior + ". Wyglad: " + appearance);
+        System.out.println(this);
     }
 
     private String generateAppearance() {
@@ -68,5 +70,11 @@ public class Npc extends Creature {
 //        } while (count > 0);
 
         return newName;
+    }
+
+    @Override
+    public String toString() {
+        return this.name + "("+(sex ? "M" : "F")+") - " +
+                "Charakter: " + nature + ". Zachowanie: " + behavior + ". Wyglad: " + appearance;
     }
 }

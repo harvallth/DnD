@@ -12,7 +12,7 @@ public class NpcBasket {
 
     public List<Npc> list() {
         System.out.println(">> List all generated NPCs:");
-        System.out.println(npcList.toString());
+        npcList.forEach(System.out::println);
         return npcList;
     }
 
