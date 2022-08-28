@@ -38,7 +38,8 @@ public class NpcBasket {
         String newName = "";
         long count;
         do {
-            newName = MaleFirstName.getRandom().toString() + "_" + LastName.getRandom().toString();
+            newName = MaleFirstName.getRandom().toString() + "_" +
+                    LastNameEpithet.getRandom().toString()+LastNameNoun.getRandom().toString();
             String tempName = newName;
             count = list().stream().filter(x -> x.name.equals(tempName)).collect(Collectors.counting());
         } while (count > 0);
