@@ -52,9 +52,16 @@ public class Character {
         character.addTrait(Trait.values()[index]);
 
         if (character.getWIS().getValue() > 7) {
-            for (int i=0; i<4; i++) {
+            for (int i=0; i<=4; i++) {
                 index = new Random().nextInt(Spell.values().length);
                 character.addSpell(Spell.values()[index]);
+            }
+        }
+
+        if (character.getSTR().getValue() + character.getDEX().getValue() > 10) {
+            for (int i=0; i<=2; i++) {
+                index = new Random().nextInt(Skill.values().length);
+                character.addSkill(Skill.values()[index]);
             }
         }
 
@@ -130,6 +137,10 @@ public class Character {
 
     public List<Spell> getSpells() {
         return spells;
+    }
+
+    public List<Skill> getSkills() {
+        return skills;
     }
 
     public List<Item> getEquipment() {
