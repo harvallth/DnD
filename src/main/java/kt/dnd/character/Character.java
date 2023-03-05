@@ -188,6 +188,8 @@ public class Character {
         System.out.println("created character "+ character.getName() +" with stats: " + character.getSTR().getValue() + " " + character.getDEX().getValue() + " " +
                 character.getCON().getValue() + " " + character.getWIS().getValue() + " " + character.getPER().getValue() + " " + character.getCHA().getValue());
 
+        character.addSkill(Skill.SPRINT);
+
         return character;
     }
 
