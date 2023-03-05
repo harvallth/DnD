@@ -5,6 +5,7 @@ import kt.dnd.character.Character;
 import kt.dnd.commands.*;
 import kt.dnd.items.Gold;
 import kt.dnd.items.armory.*;
+import kt.dnd.magic.Skill;
 import kt.dnd.magic.Spell;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 import org.springframework.context.annotation.ComponentScan;
@@ -37,6 +38,7 @@ public class DnD {
     static {
         harv = Character.createCharacter("Harv", Stat.of(7, 1, 8, 4, 7, 4));
         harv.addPerk(Perk.LIMP, Perk.LIMP, Perk.LIMP);
+        harv.addSkill(Skill.SHIELD_BASH);
         harv.addItem(Gold.of(52));
         harv.addItem(new Weapon("Ciezki miedziany buzdygan", "K6 + 3"));
         harv.addItem(new Shield("Lekki pawęż", "K6 + 1"));
@@ -65,6 +67,7 @@ public class DnD {
 
         elli = Character.createCharacter("Elli", Stat.of(6, 10, 6, 4, 7, 3));
         elli.addPerk(Perk.KNIGHT_IN_SHINING_ARMOR, Perk.SWORDSMAN, Perk.SHY);
+        elli.addSkill(Skill.CHARGE);
         elli.addItem(Gold.of(55));
         elli.addItem(new Weapon("Ten Jedyny", "K10"));
         elli.addItem(new Armor("chest", Armor.Type.LEATHER, BodyPart.CHEST, 2));
@@ -75,6 +78,7 @@ public class DnD {
         amanda = Character.createCharacter("Amanada", Stat.of(1, 4, 4, 10, 7, 6));
         amanda.addPerk(Perk.CALL_OF_THE_WOODS, Perk.CHARLATAN, Perk.DISTRACTED);
         amanda.addSpell(Spell.REGROWTH, Spell.CAT_FORM);
+        amanda.addSkill(Skill.CAT_FORM_BITE, Skill.CAT_FORM_SCRATCH);
         amanda.addItem(Gold.of(57));
         amanda.addItem(new Weapon("Macka jakas", "K6 + 1"));
         amanda.addItem(new Armor("Robe", Armor.Type.CLOTH, BodyPart.CHEST, 1));

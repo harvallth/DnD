@@ -2,6 +2,7 @@ package kt.dnd.character;
 
 import kt.dnd.items.Gold;
 import kt.dnd.items.Item;
+import kt.dnd.magic.Skill;
 import kt.dnd.magic.Spell;
 
 import java.util.ArrayList;
@@ -21,6 +22,7 @@ public class Character {
     private List<Trait> traits = new ArrayList<>();
     private List<Perk> perks = new ArrayList<>();
     private List<Spell> spells = new ArrayList<>();
+    private List<Skill> skills = new ArrayList<>();
     private List<Item> equipment = new ArrayList<>();
 
     public Character(String name, List<Stat> stats) {
@@ -149,6 +151,14 @@ public class Character {
         for (Spell spell :spells) {
             if (!this.spells.contains(spell)) {
                 this.spells.add(spell);
+            }
+        }
+    }
+
+    public void addSkill(Skill... skills) {
+        for (Skill skill :skills) {
+            if (!this.skills.contains(skill)) {
+                this.skills.add(skill);
             }
         }
     }
