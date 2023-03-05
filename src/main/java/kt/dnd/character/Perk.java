@@ -2,6 +2,7 @@ package kt.dnd.character;
 
 public enum Perk {
     AGILE,
+    ARCANE_MASTERY,
     BRAWLER,
     BLACKSMITH,
     CALL_OF_THE_WOODS,
@@ -9,6 +10,7 @@ public enum Perk {
     CHARLATAN,
     DISTRACTED,
     EAGLE_EYE,
+    GROUND_FIGHTING,
     HERMIT,
     INNER_FIRE,
     KNIGHT_IN_SHINING_ARMOR,
@@ -18,5 +20,6 @@ public enum Perk {
     SHY,
     SIXTH_SENSE,
     SWORDSMAN,
-    WANTED
+    THROWING_PROFICIENCY,
+    WANTED;
 }

@@ -35,7 +35,7 @@ public class DnD {
     private static DateTimeFormatter formatter = DateTimeFormatter.ISO_LOCAL_TIME;
 
     static {
-        harv = Character.createCharacter("Harv", Stat.of(6, 1, 9, 4, 7, 4));
+        harv = Character.createCharacter("Harv", Stat.of(7, 1, 8, 4, 7, 4));
         harv.addPerk(Perk.LIMP, Perk.LIMP, Perk.LIMP);
         harv.addItem(Gold.of(52));
         harv.addItem(new Weapon("Ciezki miedziany buzdygan", "K6 + 3"));
@@ -47,7 +47,7 @@ public class DnD {
         harv.addItem(new Armor("Miedziane kolcze naramienniki", Armor.Type.CHAINMAIL, BodyPart.SHOULDERS, 2));
 
         nyria = Character.createCharacter("Nyria", Stat.of(6, 10, 6, 4, 7, 3));
-        nyria.addPerk(Perk.AGILE, Perk.EAGLE_EYE, Perk.BRAWLER, Perk.HERMIT);
+        nyria.addPerk(Perk.AGILE, Perk.EAGLE_EYE, Perk.BRAWLER, Perk.HERMIT, Perk.THROWING_PROFICIENCY, Perk.GROUND_FIGHTING);
         nyria.addItem(Gold.of(59));
         nyria.addItem(new Weapon("Sztylet", "K6"));
         nyria.addItem(new Weapon("Wlocznia", "K8 + 2"));
@@ -58,7 +58,7 @@ public class DnD {
         nyria.addItem(new Armor("Leather boots", Armor.Type.LEATHER, BodyPart.FEET, 1));
 
         yuuko = Character.createCharacter("Yuuko", Stat.of(3, 5, 1, 8, 6, 8));
-        yuuko.addPerk(Perk.PYROPHOBIA, Perk.INNER_FIRE, Perk.WANTED, Perk.POSSESSED, Perk.CHARISMATIC, Perk.SIXTH_SENSE);
+        yuuko.addPerk(Perk.PYROPHOBIA, Perk.INNER_FIRE, Perk.WANTED, Perk.POSSESSED, Perk.CHARISMATIC, Perk.SIXTH_SENSE, Perk.ARCANE_MASTERY);
         yuuko.addSpell(Spell.FIREBALL, Spell.SPARKS, Spell.BLIND, Spell.CHARM);
         yuuko.addItem(Gold.of(40));
         yuuko.addItem(new Armor("Robe", Armor.Type.CLOTH, BodyPart.CHEST, 1));
@@ -80,7 +80,7 @@ public class DnD {
         amanda.addItem(new Armor("Robe", Armor.Type.CLOTH, BodyPart.CHEST, 1));
 
         julian = Character.createCharacter("Julian 'Menda' Otis", Stat.of(2, 4, 1, 10, 6, 7));
-        marcus = Character.createCharacter("Marcus", Stat.of(0, 0, 0, 0, 0, 0));
+        marcus = Character.createCharacter("Marcus", Stat.of(6, 10, 4, 2, 7, 1));
         eldric = Character.createCharacter("Eldric", Stat.of(0, 0, 0, 0, 0, 0));
     }
 
