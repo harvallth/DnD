@@ -30,6 +30,7 @@ public class DnD {
     private static Character yuuko;
     private static Character elli;
     private static Character amanda;
+    private static Character talia;
     private static Character julian;
     private static Character eldric;
     private static Character marcus;
@@ -82,6 +83,8 @@ public class DnD {
         amanda.addItem(Gold.of(57));
         amanda.addItem(new Weapon("Macka jakas", "K6 + 1"));
         amanda.addItem(new Armor("Robe", Armor.Type.CLOTH, BodyPart.CHEST, 1));
+
+        talia = Character.createCharacter("Talia", Race.HUMAN, Stat.of(1, 1, 1, 1, 1, 1));
 
         julian = Character.createCharacter("Julian 'Menda' Otis", Race.HUMAN, Stat.of(2, 4, 1, 10, 6, 7));
         marcus = Character.createCharacter("Marcus", Race.HUMAN, Stat.of(6, 10, 4, 2, 7, 1));
