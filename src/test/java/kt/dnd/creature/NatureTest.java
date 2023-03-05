@@ -1,6 +1,5 @@
-package test.java.dnd.creature;
+package kt.dnd.creature;
 
-import kt.dnd.creature.Nature;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.*;

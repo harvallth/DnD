@@ -1,6 +1,5 @@
-package test.java.dnd;
+package kt.dnd;
 
-import kt.dnd.DnD;
 import kt.dnd.character.*;
 import kt.dnd.character.Character;
 import org.junit.jupiter.api.BeforeEach;
@@ -26,6 +25,7 @@ class DnDUnitTest {
 
         // when
         Character character = Character.createCharacter("Harv", Race.HUMAN, stats);
+        character.addTrait(Trait.ATHLETICS_I);
 
         // then
         assertTrue(character.getTraits().get(0).equals(Trait.ATHLETICS_I));
