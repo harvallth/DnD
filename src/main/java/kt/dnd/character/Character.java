@@ -12,6 +12,7 @@ import java.util.Random;
 
 public class Character {
     public String name;
+    public Race race;
     private Stat STR;
     private Stat DEX;
     private Stat CON;
@@ -25,8 +26,9 @@ public class Character {
     private List<Skill> skills = new ArrayList<>();
     private List<Item> equipment = new ArrayList<>();
 
-    public Character(String name, List<Stat> stats) {
+    public Character(String name, Race race, List<Stat> stats) {
         this.name = name;
+        this.race = race;
         this.STR = stats.get(0);
         this.DEX = stats.get(1);
         this.CON = stats.get(2);
@@ -38,7 +40,10 @@ public class Character {
     public static Character createRandomCharacter() {
         String name = "Random";
         List<Stat> stats = Stat.random();
-        Character character = createCharacter(name, stats);
+
+        Race race = (Race.values()[new Random().nextInt(Race.values().length)]);
+
+        Character character = createCharacter(name, race, stats);
 
         int index = new Random().nextInt(Perk.values().length);
         character.addPerk(Perk.values()[index]);
@@ -167,7 +172,7 @@ public class Character {
         equipment.add(item);
     }
 
-    public static Character createCharacter(String name, List<Stat> stats) {
+    public static Character createCharacter(String name, Race race, List<Stat> stats) {
         Character character;
 
         if (stats.size() == 9) {
@@ -184,8 +189,9 @@ public class Character {
             System.out.println("removed: " + max.getValue());
 
         }
-        character = new Character(name, stats);
-        System.out.println("created character "+ character.getName() +" with stats: " + character.getSTR().getValue() + " " + character.getDEX().getValue() + " " +
+
+        character = new Character(name, race, stats);
+        System.out.println("created character "+ character.getName() +" with race " + character.race + " and stats: " + character.getSTR().getValue() + " " + character.getDEX().getValue() + " " +
                 character.getCON().getValue() + " " + character.getWIS().getValue() + " " + character.getPER().getValue() + " " + character.getCHA().getValue());
 
         character.addSkill(Skill.SPRINT);
@@ -197,6 +203,7 @@ public class Character {
     public String toString() {
         return "Character{" +
                 "name='" + name + '\'' +
+                ", race='" + race + '\'' +
                 ", STR=" + STR.getValue() +
                 ", DEX=" + DEX.getValue() +
                 ", CON=" + CON.getValue() +
